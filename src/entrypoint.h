@@ -4,6 +4,7 @@
 #include <string>
 
 #include <swiftly-ext/core.h>
+#include <swiftly-ext/event.h>
 #include <swiftly-ext/extension.h>
 #include <swiftly-ext/hooks/NativeHooks.h>
 
