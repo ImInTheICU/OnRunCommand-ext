@@ -174,9 +174,9 @@ FuncHook<decltype(Hook_ProcessMovement)> THook_ProcessMovement(Hook_ProcessMovem
 
 void Hook_ProcessMovement(CCSPlayer_MovementServices* mv, CMoveData* md)
 {
-	std::any val = md->m_vecAngles;
-	TriggerEvent("movement.ext", "OnPlayerRunCommand", {string_format("%p", mv->m_pPawn), "CCSPlayerPawnBase", md->m_vecAngles.x, md->m_vecAngles.y, md->m_vecAngles.z}, val);
-	md->m_vecAngles = std::any_cast<QAngle>(val);
+	std::any val = md->m_vecViewAngles;
+	TriggerEvent("movement.ext", "OnPlayerRunCommand", {string_format("%p", mv->m_pPawn), "CCSPlayerPawnBase", md->m_vecViewAngles.x, md->m_vecViewAngles.y, md->m_vecViewAngles.z}, val);
+	md->m_vecViewAngles = std::any_cast<QAngle>(val);
 	THook_ProcessMovement(mv, md);
 }
 
